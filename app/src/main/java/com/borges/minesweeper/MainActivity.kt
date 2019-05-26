@@ -2,13 +2,13 @@ package com.borges.minesweeper
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.GridView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    lateinit var gridView: GridView
+    private val TAG = "MainActivity"
 
     private val numbers = listOf(
         "1a", "2a", "3a", "4a", "5a", "6a",
@@ -16,18 +16,15 @@ class MainActivity : AppCompatActivity() {
         "1c", "2c", "3c", "4c", "5c", "6c"
     )
 
-    private val
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        gridView = grid_view
-
         val adapter = MainAdapter(this, numbers)
-        gridView.adapter = adapter
+        grid_view.adapter = adapter
 
-        gridView.setOnItemClickListener { parent, view, position, id ->
+        grid_view.setOnItemClickListener { _, _, position, _ ->
+            Log.d(TAG, "onItemClick: clicked position $position")
             Toast.makeText(this, "You clicked ${numbers[position]}", Toast.LENGTH_LONG).show()
         }
     }

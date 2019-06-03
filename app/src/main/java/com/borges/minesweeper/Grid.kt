@@ -89,4 +89,8 @@ class Grid(width: Int, height: Int, bombCount: Int) {
         println("------------ END GRID -------------")
     }
 
+    fun cellValue(cell: Pair<Int, Int>): Int {
+        return grid[cell.first][cell.second]
+    }
+
 }

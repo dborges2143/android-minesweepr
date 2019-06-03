@@ -1,12 +1,594 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<!--<android.support.constraint.ConstraintLayout-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--tools:context=".MainActivity">-->
+    <!--<GridView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" android:id="@+id/grid_view" android:numColumns="6"/>-->
+<!--</android.support.constraint.ConstraintLayout>-->
+
+<TableLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         tools:context=".MainActivity">
-    <GridView
+
+    <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:id="@+id/grid_view" android:numColumns="6"/>
-</android.support.constraint.ConstraintLayout>
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt"
+                android:onClick="cellClick"
+                android:id="@+id/button_0_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_0"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_0"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_1"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_1"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_2"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_2"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_3"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_3"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_4"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_4"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_5"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_5"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_6"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_6"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_7"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_7"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_8"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_8"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_0_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_1_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_2_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_3_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_4_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_5_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_6_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_7_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_8_9"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="cellClick"
+                android:id="@+id/button_9_9"/>
+
+    </TableRow>
+
+</TableLayout>

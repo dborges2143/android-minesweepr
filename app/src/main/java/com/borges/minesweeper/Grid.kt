@@ -4,7 +4,7 @@ import kotlin.random.Random
 
 class Grid(width: Int, height: Int, bombCount: Int) {
 
-    private lateinit var grid: Array<IntArray>
+    private lateinit var grid: Array<Array<Cell>>
 
     init {
         generateGrid(bombCount, width, height)
@@ -14,28 +14,27 @@ class Grid(width: Int, height: Int, bombCount: Int) {
     val gridHeight: Int get() = grid[0].size
     val bombCount: Int get() =
         grid.fold(0) { sum, row ->
-            sum + row.filter { it == BOMB }.size
+            sum + row.filter { it.isBomb }.size
         }
 
     private fun generateGrid(bombCount: Int, width: Int, height: Int) {
         initializeGrid(width, height)
         fillGridWithBombs(bombCount)
         fillNeighborBombCounts()
-        print()
     }
 
     private fun initializeGrid(width: Int, height: Int) {
-        grid = Array(width) { IntArray(height) }
+        grid = Array(width) { x -> Array(height) { y -> Cell(x, y) } }
     }
 
     private fun fillGridWithBombs(count: Int) {
         var bombsRemaining = count
         while (bombsRemaining > 0) {
-            val randomX = Random.nextInt(0, gridWidth-1)
-            val randomY = Random.nextInt(0, gridHeight-1)
+            val randomX = Random.nextInt(0, gridWidth - 1)
+            val randomY = Random.nextInt(0, gridHeight - 1)
 
-            if (grid[randomX][randomY] != BOMB) {
-                grid[randomX][randomY] = BOMB
+            if (!grid[randomX][randomY].isBomb) {
+                grid[randomX][randomY].setBomb()
                 bombsRemaining--
             }
         }
@@ -44,21 +43,14 @@ class Grid(width: Int, height: Int, bombCount: Int) {
     private fun fillNeighborBombCounts() {
         repeat(gridWidth) { x ->
             repeat(gridHeight) { y ->
-                if (grid[x][y] != BOMB) {
-                    grid[x][y] = neighbors(x, y)
-                        .apply {
-                            println("Neighbors for $x, $y (Total bombs: ${filter { it == BOMB }.size})")
-                            repeat(size) { print("${get(it)} ") }
-                            println()
-                        }
-                        .filter { it == BOMB }.size
-                }
+                if (!grid[x][y].isBomb)
+                    grid[x][y].value = neighbors(x, y).filter { it.isBomb }.size
             }
         }
     }
 
-    private fun neighbors(x: Int, y: Int): IntArray {
-        val neighbors = mutableListOf<Int>()
+    fun neighbors(x: Int, y: Int): List<Cell> {
+        val neighbors = mutableListOf<Cell>()
 
         (-1..1).forEach { xPrime ->
             (-1..1).forEach { yPrime ->
@@ -67,7 +59,7 @@ class Grid(width: Int, height: Int, bombCount: Int) {
                 }
             }
         }
-        return neighbors.toIntArray()
+        return neighbors
     }
 
     private fun isItself(xPrime: Int, yPrime: Int) = xPrime == 0 && yPrime == 0
@@ -89,7 +81,7 @@ class Grid(width: Int, height: Int, bombCount: Int) {
         println("------------ END GRID -------------")
     }
 
-    fun cellValue(cell: Pair<Int, Int>): Int {
+    fun cell(cell: Pair<Int, Int>): Cell {
         return grid[cell.first][cell.second]
     }
 

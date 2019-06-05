@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private val gridWidth = 10
     private val gridHeight = 10
-    private val bombCount = 20
+    private val bombCount = 10
 
     private val grid = Grid(width = gridWidth, height = gridHeight, bombCount = bombCount)
 
@@ -25,18 +25,16 @@ class MainActivity : AppCompatActivity() {
 
         initializeButtonGrid()
 
-        buttonNewGame.setOnClickListener {
-            newGame()
-        }
+        buttonNewGame.setOnClickListener { newGame() }
     }
 
     private fun newGame() {
-        grid.reset(width = gridWidth, height = gridHeight, bombCount = bombCount)
         initializeButtonGrid()
         performActionOnAllButtons {
             it.text = ""
             it.setBackgroundColor(Color.parseColor("#FF00FFFF"))
         }
+        grid.reset(width = gridWidth, height = gridHeight, bombCount = bombCount)
     }
 
     private fun performActionOnAllButtons(action: (Button) -> Unit) {
@@ -71,7 +69,18 @@ class MainActivity : AppCompatActivity() {
         revealCell(cell, view as Button)
         if (cell.isBomb) {
             revealAllCells()
-            Toast.makeText(this, "YOU LOSE", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "YOU LOSE", Toast.LENGTH_SHORT).show()
+        } else if (grid.isCleaned) {
+            highlightBombs()
+            Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_SHORT).show()
+
+        }
+    }
+
+    private fun highlightBombs() {
+        performActionOnAllButtons {
+            if (it.text == "X")
+                it.setBackgroundColor(Color.GREEN)
         }
     }
 

@@ -89,4 +89,11 @@ class Grid(width: Int, height: Int, bombCount: Int) {
         return grid[cell.first][cell.second]
     }
 
+    val isCleaned: Boolean
+        get() = grid.all { row ->
+                row
+                .filter { !it.isBomb }
+                .all { it.isRevealed }
+            }
+
 }

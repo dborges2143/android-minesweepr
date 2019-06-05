@@ -17,6 +17,10 @@ class Grid(width: Int, height: Int, bombCount: Int) {
             sum + row.filter { it.isBomb }.size
         }
 
+    fun reset(width: Int,  height: Int, bombCount: Int) {
+        generateGrid(bombCount, width, height)
+    }
+
     private fun generateGrid(bombCount: Int, width: Int, height: Int) {
         initializeGrid(width, height)
         fillGridWithBombs(bombCount)

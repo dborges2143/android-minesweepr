@@ -2,12 +2,14 @@ package com.borges.minesweeper
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
+import kotlin.concurrent.scheduleAtFixedRate
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +18,8 @@ class MainActivity : AppCompatActivity() {
     private val bombCount = 20
 
     lateinit var grid: Grid
+    private var totalTime = 0
+    private var timer = Timer()
 
     private fun buttonId(x: Int, y: Int): String = "button_${x}_$y"
 
@@ -35,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             it.setTextColor(Color.WHITE)
         }
         grid.reset()
+        resetTimer()
     }
 
     private fun performActionOnAllButtons(action: (Button) -> Unit) {
@@ -72,9 +77,11 @@ class MainActivity : AppCompatActivity() {
             if (cell.hasNoNeighboringBombs) clickNeighbors(cell)
 
             if (cell.isBomb) {
+                timer.cancel()
                 revealAllCells()
                 Toast.makeText(this, "YOU LOSE", Toast.LENGTH_SHORT).show()
             } else if (grid.isCleaned) {
+                timer.cancel()
                 highlightBombs()
                 Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_SHORT).show()
             }
@@ -87,7 +94,19 @@ class MainActivity : AppCompatActivity() {
             buttonNewGame.isEnabled = true
             buttonNewGame.setOnClickListener { newGame() }
             clickCell(view)
+            timer.scheduleAtFixedRate(1000, 1000) { incrementTimer() }
         }
+    }
+
+    private fun incrementTimer() {
+        totalTime += 1
+        textTimer.text = "Time: $totalTime"
+    }
+
+    private fun resetTimer() {
+        timer = Timer()
+        totalTime = 0
+        textTimer.text = "Time: $totalTime"
     }
 
     private fun clickNeighbors(cell: Cell) {

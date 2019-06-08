@@ -27,6 +27,8 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:background="@android:color/holo_green_dark" android:id="@+id/buttonNewGame"/>
 
+    <TextView android:text="Time: 0" android:gravity="center" android:layout_margin="10dp" android:id="@+id/textTimer"/>
+
     <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"

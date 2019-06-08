@@ -12,6 +12,9 @@ class Cell(x: Int, y: Int) {
     val isBomb: Boolean
         get() = value == BOMB
 
+    val hasNoNeighboringBombs: Boolean
+        get() = value == 0
+
     fun setBomb() {
         value = BOMB
     }

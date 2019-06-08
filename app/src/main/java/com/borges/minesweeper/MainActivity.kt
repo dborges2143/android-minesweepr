@@ -13,9 +13,9 @@ class MainActivity : AppCompatActivity() {
 
     private val gridWidth = 10
     private val gridHeight = 10
-    private val bombCount = 10
+    private val bombCount = 20
 
-    private val grid = Grid(width = gridWidth, height = gridHeight, bombCount = bombCount)
+    lateinit var grid: Grid
 
     private fun buttonId(x: Int, y: Int): String = "button_${x}_$y"
 
@@ -23,23 +23,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initializeButtonGrid()
+        buttonNewGame.isEnabled = false
 
-        buttonNewGame.setOnClickListener { newGame() }
+        grid = Grid(width = gridWidth, height = gridHeight, bombCount = bombCount)
     }
 
     private fun newGame() {
-        initializeButtonGrid()
         performActionOnAllButtons {
             it.text = ""
             it.setBackgroundColor(Color.parseColor("#FF00FFFF"))
+            it.setTextColor(Color.WHITE)
         }
-        grid.reset(width = gridWidth, height = gridHeight, bombCount = bombCount)
+        grid.reset()
     }
 
     private fun performActionOnAllButtons(action: (Button) -> Unit) {
-        repeat(grid.gridWidth) { x ->
-            repeat(grid.gridHeight) { y ->
+        repeat(gridWidth) { x ->
+            repeat(gridHeight) { y ->
                 val button: Button = findViewById(resources.getIdentifier(buttonId(x, y), "id", packageName))
                 action(button)
             }
@@ -65,15 +65,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickCell(view: View) {
-        val cell = findCell(resources.getResourceName(view.id))
-        revealCell(cell, view as Button)
-        if (cell.isBomb) {
-            revealAllCells()
-            Toast.makeText(this, "YOU LOSE", Toast.LENGTH_SHORT).show()
-        } else if (grid.isCleaned) {
-            highlightBombs()
-            Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_SHORT).show()
+        if (grid.isInitialized) {
+            val cell = findCell(resources.getResourceName(view.id))
+            revealCell(cell, view as Button)
 
+            if (cell.hasNoNeighboringBombs) clickNeighbors(cell)
+
+            if (cell.isBomb) {
+                revealAllCells()
+                Toast.makeText(this, "YOU LOSE", Toast.LENGTH_SHORT).show()
+            } else if (grid.isCleaned) {
+                highlightBombs()
+                Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_SHORT).show()
+            }
+
+        } else {
+            val safeCoordinate = findButtonCoordinate(resources.getResourceName(view.id))
+            grid.generateGrid(safeCoordinate)
+
+            initializeButtonGrid()
+            buttonNewGame.isEnabled = true
+            buttonNewGame.setOnClickListener { newGame() }
+            clickCell(view)
+        }
+    }
+
+    private fun clickNeighbors(cell: Cell) {
+        val neighbors = grid.neighbors(cell.locationX, cell.locationY)
+        neighbors.filter { !it.isRevealed }.forEach { neighbor ->
+            val neighborButton: Button = findViewById(resources.getIdentifier(buttonId(neighbor.locationX, neighbor.locationY), "id", packageName))
+            clickCell(neighborButton)
         }
     }
 
@@ -92,15 +113,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun findCell(resourceName: String): Cell {
+        val coordinate = findButtonCoordinate(resourceName)
+        return grid.cell(coordinate)
+    }
+
+    private fun findButtonCoordinate(resourceName: String): Pair<Int, Int> {
         val location = resourceName.substring(resourceName.length - 3)
         val x = location[0].minus('0')
         val y = location[2].minus('0')
-        return grid.cell(Pair(x, y))
+        return Pair(x, y)
     }
 
     private fun revealCell(cell: Cell, button: Button) {
         button.text = cell.toString()
         button.setBackgroundColor(Color.GRAY)
+        if (cell.isBomb) button.setTextColor(Color.RED)
         cell.isRevealed = true
     }
 

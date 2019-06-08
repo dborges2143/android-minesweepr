@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
 
@@ -104,6 +105,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun resetTimer() {
+        try {
+            timer.cancel()
+        } catch (e: Exception) {}
         timer = Timer()
         totalTime = 0
         textTimer.text = "Time: $totalTime"

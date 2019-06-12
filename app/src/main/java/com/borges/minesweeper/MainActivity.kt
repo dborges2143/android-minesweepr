@@ -8,19 +8,22 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.Exception
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
 
 class MainActivity : AppCompatActivity() {
 
     private val gridWidth = 10
-    private val gridHeight = 10
-    private val bombCount = 20
+    private val gridHeight = 20
+    private val bombCount = 35
 
     lateinit var grid: Grid
-    private var totalTime = 0
     private var timer = Timer()
+    private var totalTime = 0
+    private var bombsLeft = bombCount
+
+    private val mineColor by lazy { resources.getColor(R.color.colorMineCell, null) }
+    private val concealedColor by lazy { resources.getColor(R.color.colorConcealedCell, null) }
 
     private fun buttonId(x: Int, y: Int): String = "button_${x}_$y"
 
@@ -31,16 +34,23 @@ class MainActivity : AppCompatActivity() {
         buttonNewGame.isEnabled = false
 
         grid = Grid(width = gridWidth, height = gridHeight, bombCount = bombCount)
+        updateBombsLeftLabel()
     }
 
     private fun newGame() {
         performActionOnAllButtons {
             it.text = ""
-            it.setBackgroundColor(Color.parseColor("#FF00FFFF"))
+            it.setBackgroundColor(concealedColor)
             it.setTextColor(Color.WHITE)
         }
         grid.reset()
         resetTimer()
+        bombsLeft = bombCount
+        updateBombsLeftLabel()
+    }
+
+    private fun updateBombsLeftLabel() {
+        textBombsLeft.text = "Bombs: $bombsLeft"
     }
 
     private fun performActionOnAllButtons(action: (Button) -> Unit) {
@@ -56,14 +66,25 @@ class MainActivity : AppCompatActivity() {
         performActionOnAllButtons {
 
             it.setOnLongClickListener { view ->
-                val background = view.background as ColorDrawable
 
-                if (!grid.cell(Pair(0, 0)).isRevealed) {
-                    if (background.color == Color.RED)
-                        view.setBackgroundColor(Color.CYAN)
-                    else
-                        view.setBackgroundColor(Color.RED)
-                }
+                if (grid.isInitialized) {
+                    val background = view.background as ColorDrawable
+
+                    if (!grid.cell(Pair(0, 0)).isRevealed) {
+                        when (background.color) {
+                            mineColor -> {
+                                view.setBackgroundColor(concealedColor)
+                                bombsLeft += 1
+                            }
+                            concealedColor -> {
+                                view.setBackgroundColor(mineColor)
+                                bombsLeft -= 1
+                            }
+                        }
+                        updateBombsLeftLabel()
+                    }
+
+                } else clickCell(it)
 
                 true
             }
@@ -89,14 +110,17 @@ class MainActivity : AppCompatActivity() {
 
         } else {
             val safeCoordinate = findButtonCoordinate(resources.getResourceName(view.id))
-            grid.generateGrid(safeCoordinate)
-
-            initializeButtonGrid()
-            buttonNewGame.isEnabled = true
-            buttonNewGame.setOnClickListener { newGame() }
-            clickCell(view)
-            timer.scheduleAtFixedRate(1000, 1000) { incrementTimer() }
+            startNewGame(view, safeCoordinate)
         }
+    }
+
+    private fun startNewGame(view: View, safeCoordinate: Pair<Int, Int>) {
+        grid.generateGrid(safeCoordinate)
+        initializeButtonGrid()
+        buttonNewGame.isEnabled = true
+        buttonNewGame.setOnClickListener { newGame() }
+        clickCell(view)
+        timer.scheduleAtFixedRate(1000, 1000) { incrementTimer() }
     }
 
     private fun incrementTimer() {
@@ -141,9 +165,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun findButtonCoordinate(resourceName: String): Pair<Int, Int> {
-        val location = resourceName.substring(resourceName.length - 3)
+        val location = resourceName.substringAfter('_')
         val x = location[0].minus('0')
-        val y = location[2].minus('0')
+        val y = location.substring(2).toInt()
         return Pair(x, y)
     }
 

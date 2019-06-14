@@ -9,12 +9,25 @@ class Grid(val width: Int, val height: Int, val bombCount: Int) {
     val isInitialized: Boolean
         get() = ::grid.isInitialized && grid.isNotEmpty()
 
-    val isCleaned: Boolean
+    val isClean: Boolean
+        get() = allBombsMarked || allNonBombsRevealed
+
+    private val allBombsMarked: Boolean
+        get() = grid.all { row ->
+            row
+                .filter { it.isBomb }
+                .all { it.isMarkedAsBomb }
+        }
+
+    private val allNonBombsRevealed: Boolean
         get() = grid.all { row ->
             row
                 .filter { !it.isBomb }
                 .all { it.isRevealed }
         }
+
+    val markedBombs: Int
+        get() = grid.sumBy { row -> row.sumBy { if (it.isMarkedAsBomb) 1 else 0 } }
 
     fun reset() {
         grid = emptyArray()

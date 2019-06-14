@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
             it.text = ""
             it.setBackgroundColor(concealedColor)
             it.setTextColor(Color.WHITE)
+            it.isEnabled = true
         }
         grid.reset()
         resetTimer()
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateBombsLeftLabel() {
+        if (grid.isInitialized) bombsLeft = bombCount - grid.markedBombs
         textBombsLeft.text = "Bombs: $bombsLeft"
     }
 
@@ -62,6 +64,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun gameWon() {
+        timer.cancel()
+        highlightBombs()
+        Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_SHORT).show()
+        disableGrid()
+    }
+
+    private fun gameLost() {
+        timer.cancel()
+        revealAllCells()
+        Toast.makeText(this, "YOU LOSE", Toast.LENGTH_SHORT).show()
+        disableGrid()
+    }
+
+    private fun disableGrid() {
+        performActionOnAllButtons { it.isEnabled = false }
+    }
+
     private fun initializeButtonGrid() {
         performActionOnAllButtons {
 
@@ -69,16 +89,18 @@ class MainActivity : AppCompatActivity() {
 
                 if (grid.isInitialized) {
                     val background = view.background as ColorDrawable
+                    val cell = findCell(resources.getResourceName(view.id))
 
-                    if (!grid.cell(Pair(0, 0)).isRevealed) {
+                    if (!cell.isRevealed) {
                         when (background.color) {
                             mineColor -> {
+                                cell.unMarkBomb()
                                 view.setBackgroundColor(concealedColor)
-                                bombsLeft += 1
                             }
                             concealedColor -> {
+                                cell.markAsBomb()
                                 view.setBackgroundColor(mineColor)
-                                bombsLeft -= 1
+                                if (grid.isClean) gameWon()
                             }
                         }
                         updateBombsLeftLabel()
@@ -96,16 +118,10 @@ class MainActivity : AppCompatActivity() {
             val cell = findCell(resources.getResourceName(view.id))
             revealCell(cell, view as Button)
 
-            if (cell.hasNoNeighboringBombs) clickNeighbors(cell)
-
-            if (cell.isBomb) {
-                timer.cancel()
-                revealAllCells()
-                Toast.makeText(this, "YOU LOSE", Toast.LENGTH_SHORT).show()
-            } else if (grid.isCleaned) {
-                timer.cancel()
-                highlightBombs()
-                Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_SHORT).show()
+            when {
+                cell.isBomb -> gameLost()
+                cell.hasNoNeighboringBombs -> clickNeighbors(cell)
+                grid.isClean -> gameWon()
             }
 
         } else {
@@ -147,7 +163,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun highlightBombs() {
         performActionOnAllButtons {
-            if (it.text == "X")
+            val cell = findCell(resources.getResourceName(it.id))
+            if (cell.isBomb)
                 it.setBackgroundColor(Color.GREEN)
         }
     }
@@ -168,7 +185,7 @@ class MainActivity : AppCompatActivity() {
         val location = resourceName.substringAfter('_')
         val x = location[0].minus('0')
         val y = location.substring(2).toInt()
-        return Pair(x, y)
+        return x to y
     }
 
     private fun revealCell(cell: Cell, button: Button) {

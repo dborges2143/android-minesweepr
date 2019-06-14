@@ -8,6 +8,8 @@ class Cell(x: Int, y: Int) {
     var value = 0
 
     var isRevealed = false
+    var isMarkedAsBomb = false
+        private set
 
     val isBomb: Boolean
         get() = value == BOMB
@@ -17,6 +19,14 @@ class Cell(x: Int, y: Int) {
 
     fun setBomb() {
         value = BOMB
+    }
+
+    fun unMarkBomb() {
+        isMarkedAsBomb = false
+    }
+
+    fun markAsBomb() {
+        isMarkedAsBomb = true
     }
 
     override fun toString(): String {

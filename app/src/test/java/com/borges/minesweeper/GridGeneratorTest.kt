@@ -1,5 +1,6 @@
 package com.borges.minesweeper
 
+import com.borges.minesweeper.data.Grid
 import org.junit.Test
 import strikt.api.expectThat
 import strikt.assertions.isEqualTo

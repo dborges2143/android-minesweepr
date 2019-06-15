@@ -7,34 +7,73 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.borges.minesweeper.data.Cell
+import com.borges.minesweeper.data.Grid
+import com.borges.minesweeper.data.GridDifficulty
+import com.borges.minesweeper.dialogs.DifficultySelectorDialog
+import com.borges.minesweeper.fragments.EasyGridFragment
+import com.borges.minesweeper.fragments.HardGridFragment
+import com.borges.minesweeper.fragments.MediumGridFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficultyListener {
+    private val manager = supportFragmentManager
 
-    private val gridWidth = 10
-    private val gridHeight = 20
-    private val bombCount = 35
+    private var selectedDifficulty = GridDifficulty.MEDIUM
+    private var bombsLeft = selectedDifficulty.bombCount
 
     lateinit var grid: Grid
     private var timer = Timer()
     private var totalTime = 0
-    private var bombsLeft = bombCount
 
     private val mineColor by lazy { resources.getColor(R.color.colorMineCell, null) }
     private val concealedColor by lazy { resources.getColor(R.color.colorConcealedCell, null) }
+    private val successColor by lazy { resources.getColor(R.color.colorPrimary, null) }
 
     private fun buttonId(x: Int, y: Int): String = "button_${x}_$y"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(minesweepr_toolbar)
 
         buttonNewGame.isEnabled = false
 
-        grid = Grid(width = gridWidth, height = gridHeight, bombCount = bombCount)
+        updateDifficulty()
+        buttonDifficulty.setOnClickListener {
+            val dialog = DifficultySelectorDialog()
+            val bundle = Bundle()
+            bundle.putString("difficulty", selectedDifficulty.label)
+            dialog.arguments = bundle
+            dialog.show(supportFragmentManager, "Select Difficulty")
+        }
+    }
+
+    override fun onDifficultyChanged(difficulty: GridDifficulty) {
+        selectedDifficulty = difficulty
+        updateDifficulty()
+    }
+
+    fun updateDifficulty() {
+        val fragment = when(selectedDifficulty) {
+            GridDifficulty.EASY -> EasyGridFragment()
+            GridDifficulty.MEDIUM -> MediumGridFragment()
+            GridDifficulty.HARD -> HardGridFragment()
+        }
+        val transaction = manager.beginTransaction()
+        transaction.replace(R.id.fragment_holder, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+
+        grid = Grid(
+            width = selectedDifficulty.width,
+            height = selectedDifficulty.height,
+            bombCount = selectedDifficulty.bombCount
+        )
         updateBombsLeftLabel()
+        buttonDifficulty.text = selectedDifficulty.label
     }
 
     private fun newGame() {
@@ -46,18 +85,18 @@ class MainActivity : AppCompatActivity() {
         }
         grid.reset()
         resetTimer()
-        bombsLeft = bombCount
+        bombsLeft = selectedDifficulty.bombCount
         updateBombsLeftLabel()
     }
 
     private fun updateBombsLeftLabel() {
-        if (grid.isInitialized) bombsLeft = bombCount - grid.markedBombs
-        textBombsLeft.text = "Bombs: $bombsLeft"
+        if (grid.isInitialized) bombsLeft = selectedDifficulty.bombCount - grid.markedBombs
+        textBombsLeft.text = bombsLeft.toString()
     }
 
     private fun performActionOnAllButtons(action: (Button) -> Unit) {
-        repeat(gridWidth) { x ->
-            repeat(gridHeight) { y ->
+        repeat(selectedDifficulty.width) { x ->
+            repeat(selectedDifficulty.height) { y ->
                 val button: Button = findViewById(resources.getIdentifier(buttonId(x, y), "id", packageName))
                 action(button)
             }
@@ -141,7 +180,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun incrementTimer() {
         totalTime += 1
-        textTimer.text = "Time: $totalTime"
+        textTimer.text = totalTime.toString()
     }
 
     private fun resetTimer() {
@@ -150,7 +189,7 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {}
         timer = Timer()
         totalTime = 0
-        textTimer.text = "Time: $totalTime"
+        textTimer.text = totalTime.toString()
     }
 
     private fun clickNeighbors(cell: Cell) {
@@ -165,7 +204,7 @@ class MainActivity : AppCompatActivity() {
         performActionOnAllButtons {
             val cell = findCell(resources.getResourceName(it.id))
             if (cell.isBomb)
-                it.setBackgroundColor(Color.GREEN)
+                it.setBackgroundColor(successColor)
         }
     }
 
@@ -191,7 +230,7 @@ class MainActivity : AppCompatActivity() {
     private fun revealCell(cell: Cell, button: Button) {
         button.text = cell.toString()
         button.setBackgroundColor(Color.GRAY)
-        if (cell.isBomb) button.setTextColor(Color.RED)
+        if (cell.isBomb) button.setTextColor(mineColor)
         cell.isRevealed = true
     }
 

@@ -1,4 +1,4 @@
-package com.borges.minesweeper
+package com.borges.minesweeper.data
 
 class Cell(x: Int, y: Int) {
 

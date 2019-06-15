@@ -1,4 +1,4 @@
-package com.borges.minesweeper
+package com.borges.minesweeper.data
 
 import kotlin.random.Random
 

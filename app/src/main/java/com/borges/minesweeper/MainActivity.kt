@@ -1,8 +1,9 @@
 package com.borges.minesweeper
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.os.Bundle
+import android.os.*
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
@@ -20,13 +21,20 @@ import kotlin.concurrent.scheduleAtFixedRate
 
 class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficultyListener {
     private val manager = supportFragmentManager
+    private val vibrator: Vibrator
+        get() = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
     private var selectedDifficulty = GridDifficulty.MEDIUM
     private var bombsLeft = selectedDifficulty.bombCount
 
-    lateinit var grid: Grid
-    private var timer = Timer()
+    private lateinit var grid: Grid
     private var totalTime = 0
+    private val handler = Handler()
+    private val runnable = Runnable {
+        totalTime += 1
+        textTimer.text = totalTime.toString()
+        tickTimer()
+    }
 
     private val mineColor by lazy { resources.getColor(R.color.colorMineCell, null) }
     private val concealedColor by lazy { resources.getColor(R.color.colorConcealedCell, null) }
@@ -39,16 +47,16 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         setContentView(R.layout.activity_main)
         setSupportActionBar(minesweepr_toolbar)
 
-        buttonNewGame.isEnabled = false
-
         updateDifficulty()
-        buttonDifficulty.setOnClickListener {
-            val dialog = DifficultySelectorDialog()
-            val bundle = Bundle()
-            bundle.putString("difficulty", selectedDifficulty.label)
-            dialog.arguments = bundle
-            dialog.show(supportFragmentManager, "Select Difficulty")
-        }
+        buttonDifficulty.setOnClickListener { openDifficultyDialog() }
+    }
+
+    private fun openDifficultyDialog() {
+        val dialog = DifficultySelectorDialog()
+        val bundle = Bundle()
+        bundle.putString("difficulty", selectedDifficulty.label)
+        dialog.arguments = bundle
+        dialog.show(supportFragmentManager, "Select Difficulty")
     }
 
     override fun onDifficultyChanged(difficulty: GridDifficulty) {
@@ -56,7 +64,7 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         updateDifficulty()
     }
 
-    fun updateDifficulty() {
+    private fun updateDifficulty() {
         val fragment = when(selectedDifficulty) {
             GridDifficulty.EASY -> EasyGridFragment()
             GridDifficulty.MEDIUM -> MediumGridFragment()
@@ -90,7 +98,10 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
     }
 
     private fun updateBombsLeftLabel() {
-        if (grid.isInitialized) bombsLeft = selectedDifficulty.bombCount - grid.markedBombs
+        bombsLeft = if (grid.isInitialized)
+            selectedDifficulty.bombCount - grid.markedBombs
+        else
+            selectedDifficulty.bombCount
         textBombsLeft.text = bombsLeft.toString()
     }
 
@@ -104,14 +115,14 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
     }
 
     private fun gameWon() {
-        timer.cancel()
+        handler.removeCallbacks(runnable)
         highlightBombs()
         Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_SHORT).show()
         disableGrid()
     }
 
     private fun gameLost() {
-        timer.cancel()
+        handler.removeCallbacks(runnable)
         revealAllCells()
         Toast.makeText(this, "YOU LOSE", Toast.LENGTH_SHORT).show()
         disableGrid()
@@ -125,6 +136,7 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         performActionOnAllButtons {
 
             it.setOnLongClickListener { view ->
+                vibrator.vibrate(VibrationEffect.createOneShot(100, 100))
 
                 if (grid.isInitialized) {
                     val background = view.background as ColorDrawable
@@ -175,19 +187,15 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         buttonNewGame.isEnabled = true
         buttonNewGame.setOnClickListener { newGame() }
         clickCell(view)
-        timer.scheduleAtFixedRate(1000, 1000) { incrementTimer() }
+        tickTimer()
     }
 
-    private fun incrementTimer() {
-        totalTime += 1
-        textTimer.text = totalTime.toString()
+    private fun tickTimer() {
+        handler.postDelayed(runnable, 1000)
     }
 
     private fun resetTimer() {
-        try {
-            timer.cancel()
-        } catch (e: Exception) {}
-        timer = Timer()
+        handler.removeCallbacks(runnable)
         totalTime = 0
         textTimer.text = totalTime.toString()
     }
@@ -229,8 +237,8 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
 
     private fun revealCell(cell: Cell, button: Button) {
         button.text = cell.toString()
-        button.setBackgroundColor(Color.GRAY)
-        if (cell.isBomb) button.setTextColor(mineColor)
+        button.setBackgroundColor(resources.getColor(cell.backgroundColor, null))
+        button.setTextColor(resources.getColor(cell.textColor, null))
         cell.isRevealed = true
     }
 

@@ -1,11 +1,31 @@
 package com.borges.minesweeper.data
 
-class Cell(x: Int, y: Int) {
+import com.borges.minesweeper.R
 
-    val locationX: Int = x
-    val locationY: Int = y
+class Cell(val locationX: Int, val locationY: Int) {
 
     var value = 0
+
+    val textColor: Int
+        get() = when (value) {
+            BOMB -> R.color.colorMineCell
+            1 -> R.color.colorOneNeighbor
+            2 -> R.color.colorTwoNeighbor
+            3 -> R.color.colorThreeNeighbor
+            4 -> R.color.colorFourNeighbor
+            5 -> R.color.colorFiveNeighbor
+            6 -> R.color.colorSixNeighbor
+            7 -> R.color.colorSevenNeighbor
+            8 -> R.color.colorEightNeighbor
+            else -> R.color.colorConcealedCell
+        }
+
+    val backgroundColor: Int
+        get() =
+            if (isBomb)
+                R.color.colorMineCellBackground
+            else
+                R.color.colorRevealedCellBackground
 
     var isRevealed = false
     var isMarkedAsBomb = false

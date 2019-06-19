@@ -3,7 +3,10 @@ package com.borges.minesweeper
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.os.*
+import android.os.Bundle
+import android.os.Handler
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
@@ -16,8 +19,6 @@ import com.borges.minesweeper.fragments.EasyGridFragment
 import com.borges.minesweeper.fragments.HardGridFragment
 import com.borges.minesweeper.fragments.MediumGridFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
-import kotlin.concurrent.scheduleAtFixedRate
 
 class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficultyListener {
     private val manager = supportFragmentManager
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
     private val mineColor by lazy { resources.getColor(R.color.colorMineCell, null) }
     private val concealedColor by lazy { resources.getColor(R.color.colorConcealedCell, null) }
     private val successColor by lazy { resources.getColor(R.color.colorPrimary, null) }
+    private val mineIcon by lazy { getDrawable(R.drawable.ic_flag_black_24dp) }
 
     private fun buttonId(x: Int, y: Int): String = "button_${x}_$y"
 
@@ -90,6 +92,7 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
             it.setBackgroundColor(concealedColor)
             it.setTextColor(Color.WHITE)
             it.isEnabled = true
+            (it as Button).setCompoundDrawables(null, null, null, null)
         }
         grid.reset()
         resetTimer()
@@ -150,7 +153,8 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
                             }
                             concealedColor -> {
                                 cell.markAsBomb()
-                                view.setBackgroundColor(mineColor)
+                                val button = view as Button
+                                button.setCompoundDrawablesWithIntrinsicBounds(mineIcon, null, null, null)
                                 if (grid.isClean) gameWon()
                             }
                         }
@@ -211,8 +215,11 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
     private fun highlightBombs() {
         performActionOnAllButtons {
             val cell = findCell(resources.getResourceName(it.id))
-            if (cell.isBomb)
+            if (cell.isBomb) {
+                it.setCompoundDrawablesWithIntrinsicBounds(mineIcon, null, null, null)
+                it.text = ""
                 it.setBackgroundColor(successColor)
+            }
         }
     }
 
@@ -236,9 +243,15 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
     }
 
     private fun revealCell(cell: Cell, button: Button) {
-        button.text = cell.toString()
+        if (cell.isBomb) {
+            button.setCompoundDrawablesWithIntrinsicBounds(mineIcon, null, null, null)
+            button.text = ""
+        } else {
+            button.setCompoundDrawables(null, null, null, null)
+            button.text = cell.toString()
+            button.setTextColor(resources.getColor(cell.textColor, null))
+        }
         button.setBackgroundColor(resources.getColor(cell.backgroundColor, null))
-        button.setTextColor(resources.getColor(cell.textColor, null))
         cell.isRevealed = true
     }
 

@@ -14,7 +14,7 @@ class HardGridFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.d(TAG, "onCreateView")
-        return inflater.inflate(R.layout.easy_grid, container, false)
+        return inflater.inflate(R.layout.hard_grid, container, false)
     }
 
 }

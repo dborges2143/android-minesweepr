@@ -3,19 +3,19 @@
     <color name="colorPrimary">#008535</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorConcealedCell">#00A3A3</color>
+    <color name="colorConcealedCell">#D3D3D3</color>
 
     <color name="colorMineCellBackground">#880000</color>
     <color name="colorMineCell">#FFFFFF</color>
 
     <color name="colorRevealedCellBackground">#ADADAD</color>
 
-    <color name="colorOneNeighbor">#2196F3</color>
-    <color name="colorTwoNeighbor">#4CAF50</color>
-    <color name="colorThreeNeighbor">#CE0011</color>
-    <color name="colorFourNeighbor">#673AB7</color>
-    <color name="colorFiveNeighbor">#FFC107</color>
-    <color name="colorSixNeighbor">#FF5722</color>
+    <color name="colorOneNeighbor">#00FF00</color>
+    <color name="colorTwoNeighbor">#FFFF00</color>
+    <color name="colorThreeNeighbor">#ff6600</color>
+    <color name="colorFourNeighbor">#FF3300</color>
+    <color name="colorFiveNeighbor">#FF0000</color>
+    <color name="colorSixNeighbor">#A20000</color>
     <color name="colorSevenNeighbor">#000000</color>
     <color name="colorEightNeighbor">#000000</color>
 </resources>

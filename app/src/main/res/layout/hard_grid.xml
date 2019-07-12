@@ -1,6 +1,1270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+<TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".MainActivity">
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt"
+                android:onClick="clickCell"
+                android:id="@+id/button_0_0" android:background="@color/colorConcealedCell" android:layout_margin="1dp"
+                android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_0"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_1"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_2"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_3"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_4"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_5"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_6"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_7"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_8"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_9"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt"
+                android:onClick="clickCell"
+                android:id="@+id/button_0_10" android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_10"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt"
+                android:onClick="clickCell"
+                android:id="@+id/button_0_11" android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_11"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_12"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_13"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_14"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_15"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_16"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_17"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_18"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_19"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_20"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_0_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_1_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_2_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_3_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_4_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_5_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_6_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_7_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_8_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text=""
+                android:layout_width="15pt"
+                android:layout_height="15pt" android:onClick="clickCell"
+                android:id="@+id/button_9_21"   android:background="@color/colorConcealedCell" android:layout_margin="1dp" android:longClickable="true" android:textColor="@android:color/white" android:textStyle="bold"/>
+
+    </TableRow>
+
+</TableLayout>

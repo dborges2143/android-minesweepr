@@ -18,9 +18,14 @@ import com.borges.minesweeper.dialogs.DifficultySelectorDialog
 import com.borges.minesweeper.fragments.EasyGridFragment
 import com.borges.minesweeper.fragments.HardGridFragment
 import com.borges.minesweeper.fragments.MediumGridFragment
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficultyListener {
+    private lateinit var mInterstitialAd: InterstitialAd
     private val manager = supportFragmentManager
     private val vibrator: Vibrator
         get() = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
@@ -36,6 +41,9 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         textTimer.text = totalTime.toString()
         tickTimer()
     }
+    private val adLoaderRunnable = Runnable {
+        loadAd()
+    }
 
     private val mineColor by lazy { resources.getColor(R.color.colorMineCell, null) }
     private val concealedColor by lazy { resources.getColor(R.color.colorConcealedCell, null) }
@@ -48,6 +56,17 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(minesweepr_toolbar)
+
+        MobileAds.initialize(this)
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+        mInterstitialAd.adListener = object : AdListener() {
+            override fun onAdClosed() {
+                super.onAdClosed()
+                mInterstitialAd.loadAd(AdRequest.Builder().build())
+            }
+        }
 
         updateDifficulty()
         buttonDifficulty.setOnClickListener { openDifficultyDialog() }
@@ -92,7 +111,7 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
             it.setBackgroundColor(concealedColor)
             it.setTextColor(Color.WHITE)
             it.isEnabled = true
-            (it as Button).setCompoundDrawables(null, null, null, null)
+            it.setCompoundDrawables(null, null, null, null)
         }
         grid.reset()
         resetTimer()
@@ -122,6 +141,8 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         highlightBombs()
         Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_SHORT).show()
         disableGrid()
+
+        handler.postDelayed(adLoaderRunnable, 3000)
     }
 
     private fun gameLost() {
@@ -129,6 +150,16 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         revealAllCells()
         Toast.makeText(this, "YOU LOSE", Toast.LENGTH_SHORT).show()
         disableGrid()
+
+        handler.postDelayed(adLoaderRunnable, 3000)
+    }
+
+    private fun loadAd() {
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show()
+        } else {
+            println("The interstitial wasn't loaded yet")
+        }
     }
 
     private fun disableGrid() {
@@ -253,6 +284,7 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         }
         button.setBackgroundColor(resources.getColor(cell.backgroundColor, null))
         cell.isRevealed = true
+        button.isEnabled = false
     }
 
 }

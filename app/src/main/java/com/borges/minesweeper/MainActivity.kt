@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         textBombsLeft.text = bombsLeft.toString()
     }
 
-    private fun performActionOnAllButtons(action: (Button) -> Unit) {
+    fun performActionOnAllButtons(action: (Button) -> Unit) {
         repeat(selectedDifficulty.width) { x ->
             repeat(selectedDifficulty.height) { y ->
                 val button: Button = findViewById(resources.getIdentifier(buttonId(x, y), "id", packageName))

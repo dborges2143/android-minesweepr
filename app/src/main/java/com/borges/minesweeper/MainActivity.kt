@@ -15,6 +15,7 @@ import com.borges.minesweeper.data.Cell
 import com.borges.minesweeper.data.Grid
 import com.borges.minesweeper.data.GridDifficulty
 import com.borges.minesweeper.dialogs.DifficultySelectorDialog
+import com.borges.minesweeper.dialogs.InfoDialog
 import com.borges.minesweeper.fragments.EasyGridFragment
 import com.borges.minesweeper.fragments.HardGridFragment
 import com.borges.minesweeper.fragments.MediumGridFragment
@@ -57,6 +58,14 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         setContentView(R.layout.activity_main)
         setSupportActionBar(minesweepr_toolbar)
 
+        initializeAds()
+
+        updateDifficulty()
+        buttonDifficulty.setOnClickListener { openDifficultyDialog() }
+        buttonInfo.setOnClickListener { openInfoDialog() }
+    }
+
+    private fun initializeAds() {
         MobileAds.initialize(this)
         mInterstitialAd = InterstitialAd(this)
         mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
@@ -65,11 +74,10 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
             override fun onAdClosed() {
                 super.onAdClosed()
                 mInterstitialAd.loadAd(AdRequest.Builder().build())
+                buttonNewGame.isEnabled = true
+                buttonDifficulty.isEnabled = true
             }
         }
-
-        updateDifficulty()
-        buttonDifficulty.setOnClickListener { openDifficultyDialog() }
     }
 
     private fun openDifficultyDialog() {
@@ -78,6 +86,11 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
         bundle.putString("difficulty", selectedDifficulty.label)
         dialog.arguments = bundle
         dialog.show(supportFragmentManager, "Select Difficulty")
+    }
+
+    private fun openInfoDialog() {
+        val dialog = InfoDialog()
+        dialog.show(supportFragmentManager, "About Minesweepr")
     }
 
     override fun onDifficultyChanged(difficulty: GridDifficulty) {
@@ -156,6 +169,8 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
 
     private fun loadAd() {
         if (mInterstitialAd.isLoaded) {
+            buttonNewGame.isEnabled = false
+            buttonDifficulty.isEnabled = false
             mInterstitialAd.show()
         } else {
             println("The interstitial wasn't loaded yet")
@@ -173,22 +188,22 @@ class MainActivity : AppCompatActivity(), DifficultySelectorDialog.ChangeDifficu
                 vibrator.vibrate(VibrationEffect.createOneShot(100, 100))
 
                 if (grid.isInitialized) {
-                    val background = view.background as ColorDrawable
                     val cell = findCell(resources.getResourceName(view.id))
 
                     if (!cell.isRevealed) {
-                        when (background.color) {
-                            mineColor -> {
-                                cell.unMarkBomb()
-                                view.setBackgroundColor(concealedColor)
-                            }
-                            concealedColor -> {
-                                cell.markAsBomb()
-                                val button = view as Button
-                                button.setCompoundDrawablesWithIntrinsicBounds(mineIcon, null, null, null)
-                                if (grid.isClean) gameWon()
-                            }
+
+                        if (cell.isMarkedAsBomb) {
+                            cell.unMarkBomb()
+                            view.setBackgroundColor(concealedColor)
+                            val button = view as Button
+                            button.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
+                        } else {
+                            cell.markAsBomb()
+                            val button = view as Button
+                            button.setCompoundDrawablesWithIntrinsicBounds(mineIcon, null, null, null)
+                            if (grid.isClean) gameWon()
                         }
+                        
                         updateBombsLeftLabel()
                     }
 
